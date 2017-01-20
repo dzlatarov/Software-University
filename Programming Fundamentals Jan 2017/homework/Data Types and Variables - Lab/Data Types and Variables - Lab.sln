@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. Convert Speed Units", "11. Convert Speed Units\11. Convert Speed Units.csproj", "{D318A474-2D2B-4DE9-B021-29E285B6875D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. Rectangle Properties", "12. Rectangle Properties\12. Rectangle Properties.csproj", "{3C7E3486-5FB8-473B-A6F7-A874524441BE}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D318A474-2D2B-4DE9-B021-29E285B6875D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D318A474-2D2B-4DE9-B021-29E285B6875D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D318A474-2D2B-4DE9-B021-29E285B6875D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D318A474-2D2B-4DE9-B021-29E285B6875D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C7E3486-5FB8-473B-A6F7-A874524441BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C7E3486-5FB8-473B-A6F7-A874524441BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C7E3486-5FB8-473B-A6F7-A874524441BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C7E3486-5FB8-473B-A6F7-A874524441BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
