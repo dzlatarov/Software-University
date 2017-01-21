@@ -22,7 +22,7 @@ namespace _19.Thea_the_Photographer
             double totalSecondsNeeded = totalPicturesFilterTime + totalUploadTime;
 
             TimeSpan cat = TimeSpan.FromSeconds(totalSecondsNeeded);
-            string answer = string.Format("{0}:{1}:{2}:{3}",
+            string answer = string.Format("{0:00}:{1:00}:{2:00}:{3:00}",
                 cat.Days,
                 cat.Hours,
                 cat.Minutes,
