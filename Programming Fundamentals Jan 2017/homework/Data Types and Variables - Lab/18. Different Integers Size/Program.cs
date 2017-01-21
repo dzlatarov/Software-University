@@ -93,6 +93,7 @@ namespace _18.Different_Integers_Size
 
             if (willFit)
             {
+                Console.WriteLine($"{number} can fit in:");
                 foreach (string s in message)
                 {
                     Console.WriteLine(s);
