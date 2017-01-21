@@ -81,15 +81,7 @@ namespace _18.Different_Integers_Size
             {
             }
 
-            try
-            {
-                ulong works = ulong.Parse(number);
-                willFit = true;
-                message.Add("* ulong");
-            }
-            catch (Exception)
-            {
-            }
+     
 
             if (willFit)
             {
