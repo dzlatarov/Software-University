@@ -10,23 +10,23 @@ namespace _19.Thea_the_Photographer
     {
         static void Main(string[] args)
         {
-            int totalPictures = int.Parse(Console.ReadLine());
-            int filterTime = int.Parse(Console.ReadLine());
-            int goodPicturesPercent = int.Parse(Console.ReadLine());
-            int uploadTime = int.Parse(Console.ReadLine());
+            long totalPictures = long.Parse(Console.ReadLine());
+            long filterTime = long.Parse(Console.ReadLine());
+            long goodPicturesPercent = long.Parse(Console.ReadLine());
+            long uploadTime = long.Parse(Console.ReadLine());
 
             long totalPicturesFilterTime = totalPictures * filterTime;
-            double goodPicturesAfterFilter = Math.Ceiling((totalPictures * (goodPicturesPercent * 0.01)));
-            double totalUploadTime = uploadTime * goodPicturesAfterFilter;
+            decimal goodPicturesAfterFilter = Math.Ceiling((totalPictures * (goodPicturesPercent * 0.01m)));
+            decimal totalUploadTime = uploadTime * goodPicturesAfterFilter;
 
-            double totalSecondsNeeded = totalPicturesFilterTime + totalUploadTime;
+            decimal totalSecondsNeeded = totalPicturesFilterTime + totalUploadTime;
 
-            TimeSpan cat = TimeSpan.FromSeconds(totalSecondsNeeded);
-            string answer = string.Format("{0:00}:{1:00}:{2:00}:{3:00}",
+            TimeSpan cat = TimeSpan.FromSeconds((double)totalSecondsNeeded);
+            string answer = string.Format("{0:0}:{1:00}:{2:00}:{3:00}",
                 cat.Days,
                 cat.Hours,
                 cat.Minutes,
-                cat.Seconds );
+                cat.Seconds);
 
             Console.WriteLine(answer);
         }

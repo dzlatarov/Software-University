@@ -91,7 +91,7 @@ namespace _18.Different_Integers_Size
             }
             else
             {
-                Console.WriteLine("can't fit in any type");
+                Console.WriteLine($"{number} can't fit in any type");
             }
         }
     }
