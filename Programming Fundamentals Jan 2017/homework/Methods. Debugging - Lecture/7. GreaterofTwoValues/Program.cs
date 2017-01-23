@@ -8,6 +8,7 @@
         public static void Main(string[] args)
         {
             string type = Console.ReadLine();
+            object result = null;
 
             switch (type)
             {
@@ -15,7 +16,7 @@
                     {
                         int first = int.Parse(Console.ReadLine());
                         int second = int.Parse(Console.ReadLine());
-                        Console.WriteLine(GetMax(first, second));
+                        result = GetMax(first, second);
                         break;
                     }
 
@@ -23,7 +24,7 @@
                     {
                         char first = char.Parse(Console.ReadLine());
                         char second = char.Parse(Console.ReadLine());
-                        Console.WriteLine(GetMax(first, second));
+                        result = GetMax(first, second);
                         break;
                     }
 
@@ -31,12 +32,11 @@
                     {
                         string first = Console.ReadLine();
                         string second = Console.ReadLine();
-                        Console.WriteLine(GetMax(first, second));
+                        result = GetMax(first, second);
                         break;
                     }
-                 ;
             }
-
+            Console.WriteLine(result);
 
         }
 
