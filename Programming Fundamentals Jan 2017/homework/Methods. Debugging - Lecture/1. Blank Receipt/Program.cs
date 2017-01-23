@@ -1,8 +1,8 @@
-﻿using System;
-
-namespace _1.Blank_Receipt
+﻿namespace _1.Blank_Receipt
 {
-    class Program
+    using System;
+
+    class BlankReceipt
     {
         static void Header()
         {
