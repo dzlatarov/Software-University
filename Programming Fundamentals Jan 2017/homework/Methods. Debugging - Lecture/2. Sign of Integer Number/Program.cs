@@ -22,7 +22,7 @@
             }
             else
             {
-                Console.WriteLine($"The number {number} is zero.");
+                Console.WriteLine($"The number {number} is negative.");
             }
         }
     }
