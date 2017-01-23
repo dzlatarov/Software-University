@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Blank Receipt", "1. Blan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Sign of Integer Number", "2. Sign of Integer Number\2. Sign of Integer Number.csproj", "{8FCE77AD-5E66-4303-BB00-320F159E0523}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintingTriangle", "PrintingTriangle\PrintingTriangle.csproj", "{2009D2DF-9F1A-4DEA-9B0E-85D5666661F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. PrintingTriangle", "PrintingTriangle\3. PrintingTriangle.csproj", "{2009D2DF-9F1A-4DEA-9B0E-85D5666661F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawFilledSquare", "DrawFilledSquare\DrawFilledSquare.csproj", "{E8C90E07-5A0A-4A05-BBE0-4C33DD8AEB58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. DrawFilledSquare", "DrawFilledSquare\4. DrawFilledSquare.csproj", "{E8C90E07-5A0A-4A05-BBE0-4C33DD8AEB58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

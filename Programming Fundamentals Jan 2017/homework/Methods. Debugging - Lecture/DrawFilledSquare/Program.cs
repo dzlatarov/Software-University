@@ -2,7 +2,7 @@
 {
     using System;
 
-    class FilledSquare
+    public class FilledSquare
     {
         public static void Main(string[] args)
         {
