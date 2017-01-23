@@ -3,7 +3,7 @@
     using System;
 
 
-    public class Program
+    public class GreaterValues
     {
         public static void Main(string[] args)
         {
