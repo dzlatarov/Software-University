@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5CFF8A7C-9FAB-4289-ABCF-B3918AA5C3C9}</ProjectGuid>
+    <ProjectGuid>{090B7124-6486-4B4A-88DA-6B7921F5F086}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>testfield</RootNamespace>
-    <AssemblyName>testfield</AssemblyName>
+    <RootNamespace>_14.FactorialTrailingZero</RootNamespace>
+    <AssemblyName>14.FactorialTrailingZero</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

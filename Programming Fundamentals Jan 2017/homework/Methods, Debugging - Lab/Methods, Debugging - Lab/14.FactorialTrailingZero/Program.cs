@@ -1,7 +1,8 @@
-﻿namespace _13.Factorial
+﻿namespace _14.FactorialTrailingZero
 {
     using System;
     using System.Numerics;
+
     public class Program
     {
         public static void Main(string[] args)
@@ -10,8 +11,7 @@
             BigInteger factorialResult = Factorial(n);
 
             int count = 0;
-
-            for(int i = 5; factorialResult / i >= 1; i *= 5)
+            for (int i = 5; n / i >= 1; i *= 5)
             {
                 count += n / i;
             }
@@ -24,7 +24,7 @@
             BigInteger result = 1;
             for (int i = 1; i <= n; i++)
             {
-                result *= i; 
+                result *= i;
             }
 
             return result;
