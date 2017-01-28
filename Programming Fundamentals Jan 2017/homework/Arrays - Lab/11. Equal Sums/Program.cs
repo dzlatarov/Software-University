@@ -16,7 +16,7 @@
             else
             {
                 bool sumDoesNotExist = true;
-                for (int i = 1; i < numbers.Length - 1; i++)
+                for (int i = 0; i < numbers.Length; i++)
                 {
                     if (LeftSum(i, numbers) == RightSum(i, numbers))
                     {
