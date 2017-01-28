@@ -1,41 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-class MaxSequenceOfEqualElements
+﻿namespace _06.Max_Sequence_of_Equal_Elements
 {
-    static void Main(string[] args)
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class SequenceOfEqualElements
     {
-        List<int> originalNumbers = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
-        List<int> resultList = new List<int>();
-        List<int> finalList = new List<int>();
-        int counter = 1;
-        int maxCounter = 1;
-        resultList.Add(originalNumbers[0]);
-        for (int i = 0; i < originalNumbers.Count - 1; i++)
+        public static void Main(string[] args)
         {
-            if (originalNumbers[i] == originalNumbers[i + 1])
+            int[] numbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+            List<int> bestSequenceList = new List<int>();
+            List<int> numberList = new List<int>();
+            int count = 1;
+
+            for (int i = 0; i < numbers.Length - 1; i++)
             {
-                counter++;
-                resultList.Add(originalNumbers[i + 1]);
+                if (numbers.Length - i == 1)
+                {
+                    count++;
+                    bestSequenceList.Add(count);
+                    numberList.Add(numbers[i]);
+                    count = 1;
+                }
+                else if (numbers[i] == numbers[i + 1])
+                {
+                    count++;
+                    if(numbers.Length - i == 2)
+                    {
+                        bestSequenceList.Add(count);
+                        numberList.Add(numbers[i]);
+                        count = 1;
+                    }
+                }
+                else
+                {
+                    bestSequenceList.Add(count);
+                    count = 1;
+                    numberList.Add(numbers[i]);
+                }
             }
-            else
+
+            for(int i = 0; i < bestSequenceList.Count; i++)
             {
-                counter = 1;
-                resultList.Clear();
-                resultList.Add(originalNumbers[i + 1]);
-            }
-            if (counter > maxCounter)
-            {
-                finalList.Clear();
-                maxCounter = counter;
-                finalList.AddRange(resultList);
+                if(bestSequenceList[i] == bestSequenceList.Max())
+                {
+                    for(int x = 0; x < bestSequenceList[i]; x++)
+                    {
+                        Console.Write($"{numberList[i]} ");
+                    }
+                    break;
+                }
             }
         }
-        if (maxCounter == 1)
-        {
-            Console.WriteLine(originalNumbers[0]);
-            return;
-        }
-        Console.WriteLine(string.Join(" ", finalList));
     }
 }
