@@ -43,7 +43,6 @@
 
                 command = Console.ReadLine().Split(' ').ToList();
             }
-
             command.Clear();
 
             foreach (int number in result)
@@ -107,6 +106,7 @@
 
             numbers.Clear();
             numbers.AddRange(summedPairs);
+            summedPairs.Clear();
             return numbers;
         }
 

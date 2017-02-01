@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Longest Increasing Subs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Array Manipulator", "03. Array Manipulator\03. Array Manipulator.csproj", "{96E0FF0E-534D-446F-AFE7-FB03C2BE14C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Sum Reversed Numbers", "04. Sum Reversed Numbers\04. Sum Reversed Numbers.csproj", "{FCA936CC-B1E9-41DF-B328-96FCC91BFDA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Bomb Numbers", "05. Bomb Numbers\05. Bomb Numbers.csproj", "{4E457015-6FCD-4E82-BC8E-4447C0D02B68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{96E0FF0E-534D-446F-AFE7-FB03C2BE14C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96E0FF0E-534D-446F-AFE7-FB03C2BE14C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96E0FF0E-534D-446F-AFE7-FB03C2BE14C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCA936CC-B1E9-41DF-B328-96FCC91BFDA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCA936CC-B1E9-41DF-B328-96FCC91BFDA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCA936CC-B1E9-41DF-B328-96FCC91BFDA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCA936CC-B1E9-41DF-B328-96FCC91BFDA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E457015-6FCD-4E82-BC8E-4447C0D02B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E457015-6FCD-4E82-BC8E-4447C0D02B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E457015-6FCD-4E82-BC8E-4447C0D02B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E457015-6FCD-4E82-BC8E-4447C0D02B68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
