@@ -10,42 +10,44 @@
     {
         public static void Main(string[] args)
         {
-            int[] numbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            List<int> numbers = Console.ReadLine().Split().Select(int.Parse).ToList();
 
-            List<string> longestSubsequence = new List<string>();
-            List<int> subsequenceCount = new List<int>();
-            string subsequence = string.Empty;
-            int counter = 1;
+            List<int> numbersSorted = new List<int>();
+            numbersSorted.AddRange(numbers);
+            numbersSorted.Sort();
 
-            for (int i = 0; i < numbers.Length; i++)
+            List<int> subsequence = new List<int>();
+            int counter = 0;
+
+            for (int i = 0; i < numbers.Count; i++)
             {
-                for (int x = i; x < numbers.Length; x++)
+                if (counter == numbers.Count)
                 {
-                    if (numbers[i] < numbers[x])
-                    {
-                        counter++;
-                        subsequence += $"{numbers[x]} ";
-                        subsequenceCount.Add(counter);
-                        longestSubsequence.Add(subsequence);
-                        if (x == numbers.Length - 2)
-                        {
-                            subsequenceCount.Add(counter);
-                            longestSubsequence.Add(subsequence);
-                        }
-                    }
-                    else
-                    {
-                        subsequenceCount.Add(counter);
-                        longestSubsequence.Add(subsequence);
-                        subsequence = string.Empty;
-                    }
+                    break;
                 }
-            }
-            for(int i = 0; i <= longestSubsequence.Count; i++)
-            {
-                Console.WriteLine(longestSubsequence[i]);
+                else if (subsequence.ElementAtOrDefault(i) == 0)
+                {
+                    subsequence.Add(numbers[counter]);
+                    i--;
+                    counter++;
+                }
+                else if (subsequence[i] > numbers[counter])
+                {         
+                    subsequence[i] = numbers[counter];
+                    i--;
+                    counter++;
+                }
+                else if (subsequence[i] < numbers[counter])
+                {
+                    subsequence.Add(numbers[counter]);
+                    counter++;
+                }             
             }
 
+            foreach(int integer in subsequence)
+            {
+                Console.Write($"{integer} ");
+            }
         }
     }
 }
