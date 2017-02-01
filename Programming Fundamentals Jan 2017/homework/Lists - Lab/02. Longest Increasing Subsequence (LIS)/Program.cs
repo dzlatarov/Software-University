@@ -1,53 +1,56 @@
-﻿namespace _02.Longest_Increasing_Subsequence__LIS_
+﻿namespace _02._Longest_Increasing_Subsequence_LIS
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
-    public class LIS
+    public class LongestIncreasingSubsequence
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
-            List<int> numbers = Console.ReadLine().Split().Select(int.Parse).ToList();
+            int[] sequence = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int[] longestSeq = FindLongestIncreasingSubsequence(sequence);
 
-            List<int> numbersSorted = new List<int>();
-            numbersSorted.AddRange(numbers);
-            numbersSorted.Sort();
+            Console.WriteLine("{0}", string.Join(" ", longestSeq));
+        }
 
-            List<int> subsequence = new List<int>();
-            int counter = 0;
+        public static int[] FindLongestIncreasingSubsequence(int[] sequence)
+        {
+            int[] length = new int[sequence.Length];
+            int[] prev = new int[sequence.Length];
+            int maxLength = 0;
+            int lastIndex = -1;
 
-            for (int i = 0; i < numbers.Count; i++)
+            for (int i = 0; i < sequence.Length; i++)
             {
-                if (counter == numbers.Count)
+                length[i] = 1;
+                prev[i] = -1;
+
+                for (int j = 0; j < i; j++)
                 {
-                    break;
+                    if (sequence[j] < sequence[i] && length[j] >= length[i])
+                    {
+                        length[i] = 1 + length[j];
+                        prev[i] = j;
+                    }
                 }
-                else if (subsequence.ElementAtOrDefault(i) == 0)
+
+                if (length[i] > maxLength)
                 {
-                    subsequence.Add(numbers[counter]);
-                    i--;
-                    counter++;
+                    maxLength = length[i];
+                    lastIndex = i;
                 }
-                else if (subsequence[i] > numbers[counter])
-                {         
-                    subsequence[i] = numbers[counter];
-                    i--;
-                    counter++;
-                }
-                else if (subsequence[i] < numbers[counter])
-                {
-                    subsequence.Add(numbers[counter]);
-                    counter++;
-                }             
             }
 
-            foreach(int integer in subsequence)
+            var longestSeq = new List<int>();
+            for (int i = 0; i < maxLength; i++)
             {
-                Console.Write($"{integer} ");
+                longestSeq.Add(sequence[lastIndex]);
+                lastIndex = prev[lastIndex];
             }
+
+            longestSeq.Reverse();
+            return longestSeq.ToArray();
         }
     }
 }
