@@ -9,7 +9,7 @@
         public static void Main(string[] args)
         {
             List<int> numbers = Console.ReadLine().Split().Select(int.Parse).ToList();
-            List<string> command = Console.ReadLine().Split(' ').ToList();
+            string[] command = Console.ReadLine().Split(' ').ToArray();
 
             List<int> result = new List<int>();
             while (command[0] != "print")
@@ -41,9 +41,8 @@
                         break;
                 }
 
-                command = Console.ReadLine().Split(' ').ToList();
+                command = Console.ReadLine().Split(' ').ToArray();
             }
-            command.Clear();
 
             foreach (int number in result)
             {
@@ -53,7 +52,7 @@
             Console.WriteLine($"[{string.Join(", ", numbers)}]");
         }
 
-        public static int Contains(List<int> numbers, List<string> command)
+        public static int Contains(List<int> numbers, string[] command)
         {
             int result = -1;
             if (numbers.Contains(Convert.ToInt32(command[1])))
@@ -64,16 +63,16 @@
             return result;
         }
 
-        public static List<int> Add(List<int> numbers, List<string> command)
+        public static List<int> Add(List<int> numbers, string[] command)
         {
             numbers.Insert(Convert.ToInt32(command[1]), Convert.ToInt32(command[2]));
             return numbers;
         }
 
-        public static List<int> AddMany(List<int> numbers, List<string> command)
+        public static List<int> AddMany(List<int> numbers, string[] command)
         {
             List<int> addNumbers = new List<int>();
-            for (int i = 2; i < command.Count; i++)
+            for (int i = 2; i < command.Length; i++)
             {
                 addNumbers.Add(Convert.ToInt32(command[i]));
             }
@@ -83,14 +82,14 @@
             return numbers;
         }
 
-        public static List<int> Remove(List<int> numbers, List<string> command)
+        public static List<int> Remove(List<int> numbers, string[] command)
         {
             numbers.RemoveAt(Convert.ToInt32(command[1]));
 
             return numbers;
         }
 
-        public static List<int> SumPairs(List<int> numbers, List<string> command)
+        public static List<int> SumPairs(List<int> numbers, string[] command)
         {
             List<int> summedPairs = new List<int>();
 
@@ -110,7 +109,7 @@
             return numbers;
         }
 
-        public static List<int> Shift(List<int> numbers, List<string> command)
+        public static List<int> Shift(List<int> numbers, string[] command)
         {
             int shiftedValue = Convert.ToInt32(command[1]) % numbers.Count;
             List<int> shiftedNumbers = numbers.Take(shiftedValue).ToList();
