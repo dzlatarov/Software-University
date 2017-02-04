@@ -66,7 +66,7 @@
             }
 
             here:
-            foreach (KeyValuePair<string, int> kvp in legendaryMats.OrderByDescending(x => x.Value))
+            foreach (KeyValuePair<string, int> kvp in legendaryMats.OrderByDescending(x => x.Value).ThenBy(x => x.Key))
             {
                 Console.WriteLine($"{kvp.Key}: {kvp.Value}");
             }
