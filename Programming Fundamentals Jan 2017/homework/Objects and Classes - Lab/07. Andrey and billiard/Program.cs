@@ -47,17 +47,6 @@
                     }
                 }
             }
-
-            foreach (Customers student in students)
-            {
-                Console.WriteLine(student.Name);
-                {
-                    foreach(var item in student.Purchases)
-                    {
-                        Console.WriteLine($"--{item.Key} - {item.Value}");
-                    }
-                }
-            }
         }
     }
 }
