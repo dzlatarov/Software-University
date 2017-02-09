@@ -3,50 +3,84 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class HelpCoolGuy
     {
         public static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
+            Dictionary<string, double> productPrice = new Dictionary<string, double>();
 
-            Dictionary<string, double> foodAndDrinksPrices = new Dictionary<string, double>();
-
-            char[] ignore = new char[] { '-' };
             for (int i = 0; i < n; i++)
             {
-                string[] input = Console.ReadLine().Split(ignore, StringSplitOptions.RemoveEmptyEntries);
-                string productName = input[0];
-                double productPrice = Convert.ToDouble(input[1]);
+                string[] productPriceInput = Console.ReadLine().Split('-').ToArray();
+                string product = productPriceInput[0];
+                double price = double.Parse(productPriceInput[1]);
+
+                productPrice[product] = price;
             }
 
-            List<Customers> students = new List<Customers>();
-            ignore = new char[] { '-', ',' };
+            Dictionary<string, Dictionary<string, int>> customerOrders = new Dictionary<string, Dictionary<string, int>>();
 
-            int count = 0;
             while (true)
             {
-                string[] input = Console.ReadLine().Split(ignore, StringSplitOptions.RemoveEmptyEntries);
+                string[] customerOrdersInput = Console.ReadLine().Split('-', ',').ToArray();
 
-                if (string.Join(" ", input) == "end of clients")
+                if (string.Join(" ", customerOrdersInput) == "end of clients")
                 {
                     break;
                 }
                 else
                 {
-                    string customerName = input[0];
-                    string productName = input[1];
-                    int productQuanitity = Convert.ToInt32(input[2]);
+                    string customerName = customerOrdersInput[0];
+                    string orderName = customerOrdersInput[1];
+                    int orderQuantity = Convert.ToInt32(customerOrdersInput[2]);
 
-                    if (!foodAndDrinksPrices.ContainsKey(productName))
+                    if (productPrice.ContainsKey(orderName))
                     {
-                        students[count].Name = input[0];
-                        students[count].Purchases.Add(productName, productQuanitity);
+                        Dictionary<string, int> orderNameAndQuantity = new Dictionary<string, int>();
+                        if (!customerOrders.ContainsKey(customerName))
+                        {
+                            orderNameAndQuantity[orderName] = orderQuantity;
+                            customerOrders[customerName] = orderNameAndQuantity;
+                        }
+                        else
+                        {
+                            orderNameAndQuantity = customerOrders[customerName];
+
+                            if (!orderNameAndQuantity.ContainsKey(orderName))
+                            {
+                                orderNameAndQuantity[orderName] = orderQuantity;
+                            }
+                            else
+                            {
+                                orderNameAndQuantity[orderName] += orderQuantity;
+                            }
+
+                            customerOrders[customerName] = orderNameAndQuantity;
+                        }
                     }
                 }
             }
+            double bill = 0;
+            double totalBill = 0;
+            foreach (var kvp in customerOrders.OrderBy(x => x.Key))
+            {
+                Console.WriteLine($"{kvp.Key}");
+                foreach (var kvpTwo in kvp.Value)
+                {
+                    if (productPrice.ContainsKey(kvpTwo.Key))
+                    {
+                        Console.WriteLine($"-- {kvpTwo.Key} - {kvpTwo.Value}");
+                        bill += productPrice[kvpTwo.Key] * kvpTwo.Value;
+                    }
+                }
+                Console.WriteLine($"Bill: {bill:F2}");
+                totalBill += bill;
+                bill = 0;
+            }
+
+            Console.WriteLine($"Total bill: {totalBill:F2}");
         }
     }
 }
