@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. base-10 to base-N", "Problem 01. base-10 to base-N\01. base-10 to base-N.csproj", "{EC4D2E86-4EBC-4E72-BCF2-6743702DA7A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Convert from base-N to base-10", "02. Convert from base-N to base-10\02. Convert from base-N to base-10.csproj", "{1F264321-D3F9-48BA-BF02-DB0E43823BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Unicode Characters", "03. Unicode Characters\03. Unicode Characters.csproj", "{6AD50F1F-1AEF-443C-BE01-086080FCC967}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Character Multiplier", "04. Character Multiplier\04. Character Multiplier.csproj", "{1B0EFCEB-4C24-4EF2-869E-D088D8C5F6A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Magic exchangeable words", "05. Magic exchangeable words\05. Magic exchangeable words.csproj", "{F09FCB68-4FD3-4301-BACE-1AFCD35CF799}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC4D2E86-4EBC-4E72-BCF2-6743702DA7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC4D2E86-4EBC-4E72-BCF2-6743702DA7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC4D2E86-4EBC-4E72-BCF2-6743702DA7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC4D2E86-4EBC-4E72-BCF2-6743702DA7A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F264321-D3F9-48BA-BF02-DB0E43823BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F264321-D3F9-48BA-BF02-DB0E43823BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F264321-D3F9-48BA-BF02-DB0E43823BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F264321-D3F9-48BA-BF02-DB0E43823BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD50F1F-1AEF-443C-BE01-086080FCC967}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD50F1F-1AEF-443C-BE01-086080FCC967}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD50F1F-1AEF-443C-BE01-086080FCC967}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD50F1F-1AEF-443C-BE01-086080FCC967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B0EFCEB-4C24-4EF2-869E-D088D8C5F6A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0EFCEB-4C24-4EF2-869E-D088D8C5F6A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0EFCEB-4C24-4EF2-869E-D088D8C5F6A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0EFCEB-4C24-4EF2-869E-D088D8C5F6A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F09FCB68-4FD3-4301-BACE-1AFCD35CF799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F09FCB68-4FD3-4301-BACE-1AFCD35CF799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F09FCB68-4FD3-4301-BACE-1AFCD35CF799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F09FCB68-4FD3-4301-BACE-1AFCD35CF799}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
