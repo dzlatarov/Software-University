@@ -16,17 +16,10 @@
     {
         public static void Main()
         {
-            List<string> input = Console.ReadLine().Split(new char[] { ' ', ',', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-
-            List<string> demonNames = new List<string>();
-            foreach(string str in input)
-            {
-                demonNames.Add(str.Trim());
-            }
-
+            List<string> demonNames = Console.ReadLine().Split(new char[] { ' ', ',', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim()).ToList();
 
             var healthRegex = new Regex(@"[^\d|\+|\-|\*|\/|\.|\-]");
-            var damageRegex = new Regex(@"[\+|\-][\d|+|[\d.\d]+|[\d|[\d.\d]+");
+            var damageRegex = new Regex(@"[\+|\-][\d|[\d.\d]+|[\d|[\d.\d]+");
             var multiplierRegex = new Regex(@"[\/|\*]");
 
             var demons = new List<Demons>();
@@ -68,20 +61,13 @@
                     health = health
                 };
 
-                if (health != 0)
-                {
-                    demons.Add(demon);
-                }
+                demons.Add(demon);
             }
 
-            List<string> cancer = new List<string>();
             foreach (var demon in demons.OrderBy(x => x.demonName))
             {
-                if (!cancer.Contains(demon.demonName))
-                {
-                    Console.WriteLine($"{demon.demonName} - {demon.health} health, {demon.damage:f2} damage");
-                    cancer.Add(demon.demonName);
-                }
+
+                Console.WriteLine($"{demon.demonName} - {demon.health} health, {demon.damage:f2} damage");
             }
         }
     }
