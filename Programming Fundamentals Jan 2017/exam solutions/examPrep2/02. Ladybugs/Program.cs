@@ -13,7 +13,7 @@
 
             foreach (int ladyBug in ladyBugs)
             {
-                if (ladyBug >= 0 && ladyBug <= ladyBugs.Length - 1)
+                if (ladyBug >= 0 && ladyBug <= field.Length - 1)
                 {
                     field[ladyBug] = 1;
                 }
@@ -36,7 +36,7 @@
                     if (direction == "left")
                     {
                         int ladyBugNewIndex = ladyBug - ladyBugStep;
-                        if (ladyBug >= 0 && ladyBug <= ladyBugs.Length - 1)
+                        if (ladyBug >= 0 && ladyBug <= field.Length - 1)
                         {
                             if (field[ladyBug] != 0)
                             {
@@ -44,11 +44,11 @@
 
                                 while (true)
                                 {
-                                    if (ladyBugNewIndex < 0 || ladyBugNewIndex > ladyBugs.Length - 1) 
+                                    if (ladyBugNewIndex < 0 || ladyBugNewIndex > field.Length - 1) 
                                     {
                                         break;
                                     }
-                                    else if (ladyBugs[ladyBugNewIndex] == 1)
+                                    else if (field[ladyBugNewIndex] == 1)
                                     {
                                         if(ladyBugStep > 0)
                                         {
@@ -60,7 +60,7 @@
                                         }
                                         else
                                         {
-                                            ladyBugs[ladyBugNewIndex] = 1;
+                                            field[ladyBugNewIndex] = 1;
                                             break;
                                         }
                                     }
