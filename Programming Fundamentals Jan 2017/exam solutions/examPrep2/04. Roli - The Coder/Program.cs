@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text.RegularExpressions;
 
     public class Event
     {
@@ -64,24 +63,14 @@
                         {
                             events[eventIndex].Participants.AddRange(participants);
                         }
-                        else
-                        {
-                            Event eve = new Event
-                            {
-                                EventName = eventName,
-                                Participants = participants
-                            };
-
-                            events[eventIndex] = eve;
-                        }
                     }
                 }
             }
 
             foreach (var kvp in events.OrderByDescending(x => x.Value.Participants.Count()).ThenBy(x => x.Value.EventName))
             {
-                Console.WriteLine($"{kvp.Value.EventName.TrimStart('#')} - {kvp.Value.Participants.Count()}");
-                foreach (var participant in kvp.Value.Participants.OrderBy(x => x).Distinct())
+                Console.WriteLine($"{kvp.Value.EventName.TrimStart('#')} - {kvp.Value.Participants.Distinct().Count()}");
+                foreach (var participant in kvp.Value.Participants.Distinct().OrderBy(x => x))
                 {
                     Console.WriteLine(participant);
                 }
