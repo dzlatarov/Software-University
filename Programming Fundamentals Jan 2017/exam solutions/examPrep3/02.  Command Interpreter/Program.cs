@@ -1,177 +1,102 @@
-﻿namespace _02.Command_Interpreter
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CommandInterpreter
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text.RegularExpressions;
-
-    public class CommandInterpreter
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            List<string> array = Console.ReadLine()
-                            .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
-                            .ToList();
+            List<string> input = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            string[] command = Console.ReadLine().Split(' ');
+            int start = 0;
+            int count = 0;
+            List<string> currList = new List<string>();
 
-            while (true)
+            while (command[0] != "end")
             {
-                string input = Console.ReadLine();
-
-                if (input == "end")
+                switch (command[0])
                 {
-                    break;
-                }
-                else if (Regex.IsMatch(input, @"^reverse from \d+ count \d+$"))
-                {
-                    ReverseFromToCount(array, input);
-                }
-                else if (Regex.IsMatch(input, @"^sort from \d+ count \d+$"))
-                {
-                    SortFromToCount(array, input);
-                }
-                else if (Regex.IsMatch(input, @"^rollLeft \d+ times$"))
-                {
-                    rollLeft(array, input);
-                }
-                else if (Regex.IsMatch(input, @"^rollRight \d+ times$"))
-                {
-                    rollRight(array, input);
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input parameters.");
-                }
-            }
+                    case "reverse":
+                        start = int.Parse(command[2]);
+                        count = int.Parse(command[4]);
 
-            Console.WriteLine($"[{string.Join(", ", array)}]");
-        }
+                        if (start < 0 || start >= input.Count || (start + count) > input.Count || count < 0)
+                        {
+                            Console.WriteLine("Invalid input parameters.");
+                            break;
+                        }
 
-        public static List<string> ReverseFromToCount(List<string> array, string input)
-        {
-            var matches = Regex.Matches(input, @"\d+");
+                        currList = input.Skip(start).Take(count).Reverse().ToList();
+                        input.RemoveRange(start, count); // Освобождаваме местата , на които ще вмъкнем новия List;
+                        input.InsertRange(start, currList);
+                        break;
 
-            List<int> numbers = new List<int>();
-            foreach (Match match in matches)
-            {
-                numbers.Add(Convert.ToInt32(match.ToString()));
-            }
+                    case "sort":
+                        start = int.Parse(command[2]);
+                        count = int.Parse(command[4]);
 
-            int from = numbers[0];
-            int count = numbers[1];
+                        if (start < 0 || (start + count) > input.Count || count < 0 || start >= input.Count)
+                        {
+                            Console.WriteLine("Invalid input parameters.");
+                            break;
+                        }
 
-            if (from < 0 || from + count > array.Count - 1 || from >= count)
-            {
-                Console.WriteLine("Invalid input parameters.");
-                return array;
-            }
-            else
-            {
-                List<string> range = new List<string>();
-                for (int i = from; i < from + count; i++)
-                {
-                    range.Add(array[i]);
-                }
-                range.Reverse();
+                        currList = input.Skip(start).Take(count).OrderBy(str => str).ToList(); // str е в скобите , за да помним , че това, което сортираме е string;
+                        input.RemoveRange(start, count); // Освобождаваме местата , на които ще вмъкнем новия List;
+                        input.InsertRange(start, currList);
+                        break;
 
-                array.RemoveRange(from, count);
-                array.InsertRange(from, range);
+                    case "rollLeft":
+                        count = int.Parse(command[1]);
 
-                return array;
-            }
-        }
+                        if (count < 0)
+                        {
+                            Console.WriteLine("Invalid input parameters.");
+                            break;
+                        }
 
-        public static List<string> SortFromToCount(List<string> array, string input)
-        {
-            var matches = Regex.Matches(input, @"\d+");
+                        for (int i = 0; i < count % input.Count; i++)
+                        {
+                            string element = input[0];
+                            input.RemoveAt(0);
+                            input.Add(element);
+                        }
 
-            List<int> numbers = new List<int>();
-            foreach (Match match in matches)
-            {
-                numbers.Add(Convert.ToInt32(match.ToString()));
-            }
+                        break;
 
-            int from = numbers[0];
-            int count = numbers[1];
+                    case "rollRight":
+                        count = int.Parse(command[1]);
 
-            if (from < 0 || from + count > array.Count - 1 || from > count)
-            {
-                Console.WriteLine("Invalid input parameters.");
-                return array;
-            }
-            else
-            {
-                List<string> range = new List<string>();
-                for (int i = from; i < from + count; i++)
-                {
-                    range.Add(array[i]);
-                }
-                range.Sort();
+                        if (count < 0)
+                        {
+                            Console.WriteLine("Invalid input parameters.");
+                            break;
+                        }
 
-                array.RemoveRange(from, count);
-                array.InsertRange(from, range);
+                        for (int i = 0; i < count % input.Count; i++)
+                        {
+                            string element = input[input.Count - 1];
+                            input.RemoveAt(input.Count - 1);
+                            input.Insert(0, element);
+                        }
 
-                return array;
-            }
-        }
-
-        public static List<string> rollLeft(List<string> array, string input)
-        {
-            var matches = Regex.Matches(input, @"\d+");
-
-            List<int> numbers = new List<int>();
-            foreach (Match match in matches)
-            {
-                numbers.Add(Convert.ToInt32(match.ToString()));
-            }
-
-            int times = numbers[0];
-
-            if (times < 0)
-            {
-                Console.WriteLine("Invalid input parameters.");
-                return array;
-            }
-            else
-            {
-                for (int i = 0; i < times; i++)
-                {
-                    string zeroElement = array[0];
-                    array.RemoveAt(0);
-                    array.Add(zeroElement);
+                        break;
+                    default:
+                        break;
                 }
 
-                return array;
-            }
-        }
 
-        public static List<string> rollRight(List<string> array, string input)
-        {
-            var matches = Regex.Matches(input, @"\d+");
+                command = Console.ReadLine().Split(' ');
 
-            List<int> numbers = new List<int>();
-            foreach (Match match in matches)
-            {
-                numbers.Add(Convert.ToInt32(match.ToString()));
             }
 
-            int times = numbers[0];
 
-            if (times < 0)
-            {
-                Console.WriteLine("Invalid input parameters.");
-                return array;
-            }
-            else
-            {
-                for (int i = 0; i < times; i++)
-                {
-                    string lastElement = array[array.Count() - 1];
-                    array.RemoveAt(array.Count() - 1);
-                    array.Insert(0, lastElement);
-                }
-
-                return array;
-            }
+            string output = string.Join((", "), input);
+            Console.WriteLine($"[{output}]");
         }
     }
 }
