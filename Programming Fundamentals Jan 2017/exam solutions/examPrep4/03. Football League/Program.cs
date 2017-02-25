@@ -40,13 +40,13 @@
 
             Console.WriteLine("League standings:");
             int counter = 1;
-            foreach (var kvp in countryScore.OrderByDescending(x => x.Value))
+            foreach (var kvp in countryScore.OrderByDescending(x => x.Value).ThenBy(x => x.Key))
             {
                 Console.WriteLine($"{counter}. {kvp.Key} {kvp.Value}");
                 counter++;
             }
             Console.WriteLine("Top 3 scored goals:");
-            foreach (var kvp in countryTopGoals.OrderByDescending(x => x.Value).Take(3))
+            foreach (var kvp in countryTopGoals.OrderByDescending(x => x.Value).ThenBy(x => x.Key).Take(3))
             {
                 Console.WriteLine($"- {kvp.Key} -> {kvp.Value}");
             }
@@ -64,6 +64,11 @@
                 {
                     countryScore[teamOne] += 3;
                 }
+
+                if (!countryScore.ContainsKey(teamTwo))
+                {
+                    countryScore[teamTwo] = 0;
+                }
             }
             else if (goalsTwo > goalsOne)
             {
@@ -74,6 +79,11 @@
                 else
                 {
                     countryScore[teamTwo] += 3;
+                }
+
+                if (!countryScore.ContainsKey(teamOne))
+                {
+                    countryScore[teamOne] = 0;
                 }
             }
             else if (goalsOne == goalsTwo)
@@ -101,18 +111,18 @@
             {
                 countryTopGoals[teamOne] = goalsOne;
             }
-            else if (countryTopGoals[teamOne] < goalsOne)
+            else
             {
-                countryTopGoals[teamOne] = goalsOne;
+                countryTopGoals[teamOne] += goalsOne;
             }
 
             if (!countryTopGoals.ContainsKey(teamTwo))
             {
                 countryTopGoals[teamTwo] = goalsTwo;
             }
-            else if (countryTopGoals[teamTwo] < goalsTwo)
+            else
             {
-                countryTopGoals[teamTwo] = goalsTwo;
+                countryTopGoals[teamTwo] += goalsTwo;
             }
         }
     }
