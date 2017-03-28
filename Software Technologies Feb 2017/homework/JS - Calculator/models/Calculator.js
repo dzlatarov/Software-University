@@ -25,6 +25,9 @@ function Calculator (leftOperand, operator, rightOperand) {
             case "sqrt":
                 result = Math.sqrt(this.leftOperand);
                 break;
+            case "%":
+                result = this.leftOperand % this.rightOperand;
+                break;
         }
 
         return result;
