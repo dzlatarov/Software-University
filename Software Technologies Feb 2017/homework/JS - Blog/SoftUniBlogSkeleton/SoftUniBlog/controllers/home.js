@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const Article = mongoose.model('Article');
+const Article = require('mongoose').model('Article');
 
 module.exports = {
   index: (req, res) => {
