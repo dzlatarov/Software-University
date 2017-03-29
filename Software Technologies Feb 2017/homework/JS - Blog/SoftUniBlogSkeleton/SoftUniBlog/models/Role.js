@@ -6,6 +6,10 @@ let roleSchema = mongoose.Schema({
 });
 
 const Role = mongoose.model('Role', roleSchema);
+
+module.exports = Role;
+
+
 module.exports.initialize = () => {
     Role.findOne({name: 'User'}).then(role => {
         if(!role) {
@@ -17,9 +21,9 @@ module.exports.initialize = () => {
         if(!role){
             Role.create({name: 'Admin'});
         }
-    })
+    });
 };
 
 
-module.exports = Role;
+
 

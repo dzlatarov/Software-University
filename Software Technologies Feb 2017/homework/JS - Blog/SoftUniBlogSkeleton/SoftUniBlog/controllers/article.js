@@ -46,9 +46,21 @@ module.exports = {
 
     editGet: (req, res) => {
         let id = req.params.id;
+        if(!req.isAuthenticated()){
+            let returnUrl = `/article/edit${id}`;
+            req.session.returnUrl = returnUrl;
 
+            res.redirect('/user/login');
+            return;
+        }
         Article.findById(id).then(article => {
+            req.user.isInRole('Admin').then(isAdmin => {
+            if (!isAdmin && !req.user.isAuthor(article)) {
+                res.redirect('/');
+                return;
+            }
             res.render('article/edit', article)
+            })
         });
     },
 

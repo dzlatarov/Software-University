@@ -25,16 +25,17 @@ module.exports = {
                 let salt = encryption.generateSalt();
                 let passwordHash = encryption.hashPassword(registerArgs.password, salt);
 
+                let roles = [];
+                Role.findOne({name: 'User'}).then(role => {
+                    roles.push(role.id);
+
                 let userObject = {
                     email: registerArgs.email,
                     passwordHash: passwordHash,
                     fullName: registerArgs.fullName,
-                    salt: salt
+                    salt: salt,
+                    roles: roles
                 };
-
-                let roles = [];
-                Role.findOne({name: 'User'}).then(role => {
-                    roles.push(role.id);
 
                     userObject.roles = roles;
                     User.create(userObject).then(user => {
@@ -57,18 +58,6 @@ module.exports = {
                         })
                     })
                 });
-
-                User.create(userObject).then(user => {
-                    req.logIn(user, (err) => {
-                        if (err) {
-                            registerArgs.error = err.message;
-                            res.render('user/register', registerArgs);
-                            return;
-                        }
-
-                        res.redirect('/')
-                    })
-                })
             }
         })
     },
@@ -94,7 +83,13 @@ module.exports = {
                     return;
                 }
 
-                res.redirect('/');
+                let returnUrl = '/';
+                if(req.session.returnUrl) {
+                    returnUrl = req.session.returnUrl;
+                    delete req.session.returnUrl;
+                }
+
+                res.redirect(returnUrl);
             })
         })
     },
