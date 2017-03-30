@@ -40,26 +40,36 @@ module.exports = {
         let id = req.params.id;
 
         Article.findById(id).populate('author').then(article => {
-            res.render('article/details', article);
+            if (!req.user) {
+                res.render('article/details', {article, isUserAuthorized: false});
+                return;
+            }
+
+            req.user.isInRole('Admin').then(isAdmin => {
+                let isUserAuthorized = isAdmin || req.user.isAuthor(article);
+
+                res.render('article/details', {article: article, isUserAuthorized: isUserAuthorized});
+            })
         });
     },
 
     editGet: (req, res) => {
         let id = req.params.id;
-        if(!req.isAuthenticated()){
-            let returnUrl = `/article/edit${id}`;
-            req.session.returnUrl = returnUrl;
+        if (!req.isAuthenticated()) {
+            req.session.returnUrl = `/article/edit/${id}`;
 
             res.redirect('/user/login');
             return;
         }
+
         Article.findById(id).then(article => {
             req.user.isInRole('Admin').then(isAdmin => {
-            if (!isAdmin && !req.user.isAuthor(article)) {
-                res.redirect('/');
-                return;
-            }
-            res.render('article/edit', article)
+                if (!isAdmin || !req.user.isAuthor(article)) {
+                    res.redirect('/');
+                    return;
+                }
+
+                res.render('article/edit', article)
             })
         });
     },
@@ -89,8 +99,22 @@ module.exports = {
     deleteGet: (req, res) => {
         let id = req.params.id;
 
+        if (!req.isAuthenticated()) {
+            req.session.returnUrl = `/article/delete/${id}`;
+
+            res.redirect('/user/login');
+            return;
+        }
+
         Article.findById(id).then(article => {
-            res.render('article/delete', article)
+            req.user.isInRole('Admin').then(isAdmin => {
+                if (!isAdmin && !req.user.isAuthor(article)) {
+                    res.redirect('/');
+                    return;
+                }
+
+                res.render('article/delete', article)
+            });
         });
     },
 
@@ -101,8 +125,8 @@ module.exports = {
 
             let index = author.articles.indexOf(article.id);
 
-            if(index < 0) {
-                let errorMsg = 'Article was not found for that author';
+            if (index < 0) {
+                let errorMsg = 'Article was not found for that author!';
                 res.render('article/delete', {error: errorMsg})
             } else {
                 let count = 1;
