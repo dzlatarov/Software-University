@@ -108,7 +108,7 @@ module.exports = {
 
         Article.findById(id).then(article => {
             req.user.isInRole('Admin').then(isAdmin => {
-                if (!isAdmin && !req.user.isAuthor(article)) {
+                if (!isAdmin || !req.user.isAuthor(article)) {
                     res.redirect('/');
                     return;
                 }
