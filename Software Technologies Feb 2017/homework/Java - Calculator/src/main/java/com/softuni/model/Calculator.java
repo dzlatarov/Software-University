@@ -53,6 +53,9 @@ public class Calculator {
             case "/":
                 result = this.getLeftOperand() / this.getRightOperand();
                 break;
+            case "^":
+                result = Math.pow(this.getLeftOperand(), this.getRightOperand());
+                break;
             default:
                 result = 0;
         }
