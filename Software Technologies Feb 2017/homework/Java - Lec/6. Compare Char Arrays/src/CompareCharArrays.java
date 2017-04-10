@@ -1,13 +1,8 @@
 import java.util.Arrays;
-import java.util.Scanner;
+        import java.util.Scanner;
 
-/**
- * Created by Xadera on 4/3/2017.
- */
-public class CompareCharArrays
-{
-    public static void main(String[] args)
-    {
+public class CompareCharArrays {
+    public static void main(String[] args) {
         Scanner inputA = new Scanner(System.in);
         Scanner inputB = new Scanner(System.in);
 
