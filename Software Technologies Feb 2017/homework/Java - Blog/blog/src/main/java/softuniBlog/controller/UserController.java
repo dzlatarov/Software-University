@@ -40,7 +40,7 @@ public class UserController {
     @PostMapping("/register")
     public String registerProcess(UserBindingModel userBindingModel){
 
-        if(!userBindingModel.getPassword().equals(userBindingModel.getConfirmPassword())){
+        if(!userBindingModel.getPassword().equals(userBindingModel.getConfirmPassword()) || this.userRepository.findByEmail(userBindingModel.getEmail()) != null){
             return "redirect:/register";
         }
 
