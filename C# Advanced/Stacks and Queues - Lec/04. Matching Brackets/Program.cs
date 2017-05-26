@@ -9,22 +9,9 @@
         {
             string input = Console.ReadLine();
             var stack = new Stack<int>();
+            stack.Push(input);
 
-            for(int i = 0; i < input.Length; i++)
-            {
-                if(input[i] == '(')
-                {
-                    stack.Push(i);
-                }
-                else if(input[i] == ')')
-                {
-                    for(int k = stack.Pop(); k <= i; k++)
-                    {
-                        Console.Write(input[k]);
-                    }
-                    Console.WriteLine();
-                }
-            }
+            Console.WriteLine(stack.Any());
         }
     }
 }
