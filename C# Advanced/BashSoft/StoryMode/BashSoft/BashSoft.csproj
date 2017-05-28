@@ -45,9 +45,12 @@
   <ItemGroup>
     <Compile Include="ExceptionMessages.cs" />
     <Compile Include="IOManager.cs" />
+    <Compile Include="SessionData.cs" />
     <Compile Include="StoryMode.cs" />
     <Compile Include="OutputWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentsRepository.cs" />
+    <Compile Include="Tester.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

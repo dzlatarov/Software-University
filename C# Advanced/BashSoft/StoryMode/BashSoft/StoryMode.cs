@@ -9,7 +9,9 @@ public class StoryMode
 {
     public static void Main()
     {
-        IOManager.TraverseDirectory(@"E:\SoftUNi\C# Advanced\BashSoft\BashSoft");
+        IOManager.CreateDirectoryIncurrentFolder("pesho");
+
+        IOManager.TraverseDirectory(3);
     }
 }
 

@@ -8,17 +8,17 @@ public static class OutputWriter
 {
     public static void WriteMessage(string message)
     {
-
+        Console.WriteLine(message);
     }
 
     public static void WriteMessageOnNewLine(string message)
     {
-
+        Console.WriteLine(message);
     }
 
     public static void WriteEmptyLine()
     {
-
+        Console.WriteLine();
     }
 
     public static void DisplayException(string message)
@@ -29,5 +29,8 @@ public static class OutputWriter
         Console.ForegroundColor = currentColor;
     }
 
-
+    public static void PrintStudent(KeyValuePair<string, List<int>> student)
+    {
+        OutputWriter.WriteMessageOnNewLine(string.Format($"{student.Key} - {string.Join(", ", student.Value)}"));
+    }
 }

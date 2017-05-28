@@ -40,5 +40,29 @@ public static class IOManager
             }
         }
     }
+
+    public static void CreateDirectoryIncurrentFolder(string name)
+    {
+        string path = SessionData.currentPath + "\\" + name;
+        Directory.CreateDirectory(path);
+    }
+
+    public static void TraverseDirectory(int depth)
+    { 
+        int initalIdentation = SessionData.currentPath.Split('\\').Length;
+        Queue<string> subFolders = new Queue<string>();
+
+        subFolders.Enqueue(SessionData.currentPath);
+        OutputWriter.WriteMessage(subFolders.Peek());
+
+        foreach (var file in Directory.GetFiles(SessionData.currentPath))
+        {
+            int indexOfLastSlash = file.LastIndexOf("\\");
+            string fileName = file.Substring(indexOfLastSlash);
+            OutputWriter.WriteMessageOnNewLine(new string('-', indexOfLastSlash) + fileName);
+        }
+
+        OutputWriter.WriteMessage(SessionData.currentPath);
+    }
 }
 
