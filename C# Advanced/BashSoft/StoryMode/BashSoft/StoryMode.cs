@@ -9,9 +9,24 @@ public class StoryMode
 {
     public static void Main()
     {
-        IOManager.CreateDirectoryIncurrentFolder("pesho");
+        IOManager.ChangeCurrentDirectoryRelative("..");
+        IOManager.ChangeCurrentDirectoryRelative("..");
+        IOManager.ChangeCurrentDirectoryRelative("..");
 
-        IOManager.TraverseDirectory(3);
+        IOManager.ChangeCurrentDirectoryRelative("..");
+
+        IOManager.ChangeCurrentDirectoryRelative("..");
+
+        IOManager.ChangeCurrentDirectoryRelative("..");
+        IOManager.ChangeCurrentDirectoryRelative("..");
+        IOManager.ChangeCurrentDirectoryRelative("..");
+        IOManager.ChangeCurrentDirectoryRelative("..");
+        IOManager.ChangeCurrentDirectoryRelative("..");
+
+
+
+
+
     }
 }
 

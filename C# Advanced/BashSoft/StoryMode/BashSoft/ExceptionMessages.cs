@@ -13,5 +13,9 @@ public static class ExceptionMessages
     public const string InexsistingStudentInDataBase = "The user name for the student you are trying to get does not exist!";
     public const string InexistingCourseInDataBase = "The course you are trying to get does not exis in the data base!";
     public const string IsQueryForStudentPossible = "The user name for student you are trying to get does not exist!";
+    public const string InvalidPath = "The folder/file you are trying to access at the current address, does not exist.";
+    public const string ComparisonofFilesWithDifferentSizes = "Files not of equal size, certain mismatch.";
+    public const string ForbiddenSymbolIsContained = "A frobidden symbol is contained.";
+    public const string UnableToGoHigherInPartitionHierarchy = "Unable to go higher in partition hierarchy";
 }
 
