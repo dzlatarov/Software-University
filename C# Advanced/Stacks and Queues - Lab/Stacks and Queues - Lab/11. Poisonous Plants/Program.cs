@@ -1,54 +1,64 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 public class PoisonousPlants
 {
-    public static void Main(string[] args)
+    public static void Main()
     {
-        int plantsCount = int.Parse(Console.ReadLine());
+        int n = int.Parse(Console.ReadLine());
+        int[] plants = Console.ReadLine().Split().Select(int.Parse).ToArray();
+        int[] days = new int[n];
+        int[] minElement = new int[n];
 
-        List<int> allPlants = Console.ReadLine()
-            .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
-            .Select(int.Parse).ToList();
-
-        allPlants
-            .RemoveRange(allPlants.Count() - plantsCount, allPlants.Count() - plantsCount);
-
-
-        Console.WriteLine(DaysNeeded(allPlants));
-    }
-
-    public static int DaysNeeded(List<int> allPlants)
-    {
-        int previousRemovedPlantsCount = 0;
-        int days = 0;       
-
-        while (true)
+        int min = int.MaxValue;
+        for (int i = 0; i < n; i++)
         {
-            int startingIndex = allPlants.Count() - 1;
-
-            for (int i = startingIndex; i >= 1; i--)
+            if (plants[i] < min)
             {
-                if (allPlants[i] > allPlants[i - 1])
-                {
-                    allPlants[i] = -1;
-                    previousRemovedPlantsCount++;
-                }               
+                min = plants[i];
             }
-
-            if(previousRemovedPlantsCount == 0)
-            {
-                break;
-            }
-
-            days++;
-
-            previousRemovedPlantsCount = 0;
-
-            allPlants.RemoveAll(x => x == -1);
+            minElement[i] = min;
         }
 
-        return days;
+        int max = 0;
+        int maxIndex = 0;
+
+        for (int i = 1; i < n; i++)
+        {
+            if (plants[i] > plants[i - 1])
+            {
+                days[i] = 1;
+                if (days[i] >= max)
+                {
+                    maxIndex = i;
+                    max = days[i];
+                }
+                continue;
+            }
+
+            if (plants[i] > minElement[i])
+            {
+                if (plants[i] > plants[maxIndex])
+                {
+                    days[i] = days[i - 1] + 1;
+                }
+                else
+                {
+                    days[i] = days[maxIndex] + 1;
+                }
+            }
+            if (plants[i] == minElement[i])
+            {
+                max = 0;
+            }
+
+            if (days[i] >= max)
+            {
+                maxIndex = i;
+                max = days[i];
+            }
+        }
+
+        Console.WriteLine(days.Max());
     }
 }
