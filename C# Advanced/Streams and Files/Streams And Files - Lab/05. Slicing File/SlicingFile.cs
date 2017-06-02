@@ -57,7 +57,7 @@ internal class SlicingFile
             long partSize = (long)Math.Ceiling((double)source.Length / parts);
 
             long fileOffset = 0;
-            ;
+            
             string currPartPath;
             FileStream fsPart;
             long sizeRemaining = source.Length;
