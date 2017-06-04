@@ -53,14 +53,15 @@ class RadioactiveMutanVampireBunnies
                 {
                     board[currentHeight][currentWidth] = '.';
                     board[currentHeight - 1][currentWidth] = 'P';
-
-                    currentHeight--;
                 }
                 catch (Exception)
                 {
                     Mutate(boardHeight, boardWidth, board);
                     break;
                 }
+
+
+                currentHeight--;
             }
             else if (commands[i] == 'D')
             {
@@ -68,14 +69,15 @@ class RadioactiveMutanVampireBunnies
                 {
                     board[currentHeight][currentWidth] = '.';
                     board[currentHeight + 1][currentWidth] = 'P';
-
-                    currentHeight++;
                 }
                 catch (Exception)
                 {
                     Mutate(boardHeight, boardWidth, board);
                     break;
                 }
+
+
+                currentHeight++;
             }
             else if (commands[i] == 'L')
             {
@@ -83,14 +85,14 @@ class RadioactiveMutanVampireBunnies
                 {
                     board[currentHeight][currentWidth] = '.';
                     board[currentHeight][currentWidth - 1] = 'P';
-
-                    currentWidth--;
                 }
                 catch (Exception)
                 {
                     Mutate(boardHeight, boardWidth, board);
                     break;
                 }
+
+                currentWidth--;
             }
             else if (commands[i] == 'R')
             {
@@ -98,14 +100,15 @@ class RadioactiveMutanVampireBunnies
                 {
                     board[currentHeight][currentWidth] = '.';
                     board[currentHeight][currentWidth + 1] = 'P';
-
-                    currentWidth++;
                 }
                 catch (Exception)
                 {
                     Mutate(boardHeight, boardWidth, board);
                     break;
                 }
+
+
+                currentWidth++;
             }
 
             Mutate(boardHeight, boardWidth, board);
@@ -129,7 +132,7 @@ class RadioactiveMutanVampireBunnies
 
         PrintBoardState(boardHeight, board);
 
-        if(isDead)
+        if (isDead)
         {
             Console.WriteLine($"dead: {currentHeight} {currentWidth}");
         }
@@ -207,7 +210,7 @@ class RadioactiveMutanVampireBunnies
 
             }
             catch (Exception)
-            {                
+            {
             }
         }
     }
