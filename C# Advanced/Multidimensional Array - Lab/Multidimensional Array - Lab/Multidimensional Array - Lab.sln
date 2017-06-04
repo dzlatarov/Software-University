@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Rubik’s Matrix", "05.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Target Practice", "06. Target Practice\06. Target Practice.csproj", "{97211E4C-B12D-4F9D-9F69-F1813D09C7B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Lego Blocks", "07. Lego Blocks\07. Lego Blocks.csproj", "{12D391F6-2744-456D-A2C3-4DE173C79978}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Radioactive Mutant Vampire Bunnies", "08. Radioactive Mutant Vampire Bunnies\08. Radioactive Mutant Vampire Bunnies.csproj", "{64807749-DFA2-42C3-8306-C87FBAF5513E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{97211E4C-B12D-4F9D-9F69-F1813D09C7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97211E4C-B12D-4F9D-9F69-F1813D09C7B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97211E4C-B12D-4F9D-9F69-F1813D09C7B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D391F6-2744-456D-A2C3-4DE173C79978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D391F6-2744-456D-A2C3-4DE173C79978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D391F6-2744-456D-A2C3-4DE173C79978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D391F6-2744-456D-A2C3-4DE173C79978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64807749-DFA2-42C3-8306-C87FBAF5513E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64807749-DFA2-42C3-8306-C87FBAF5513E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64807749-DFA2-42C3-8306-C87FBAF5513E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64807749-DFA2-42C3-8306-C87FBAF5513E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

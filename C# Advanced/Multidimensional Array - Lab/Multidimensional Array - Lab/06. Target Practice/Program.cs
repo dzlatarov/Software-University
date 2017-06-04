@@ -80,7 +80,7 @@ public class TargetPractice
         {
             for (int y = 0; y < matrixWidth; y++)
             {
-                Console.Write($"{snakeMatrix[x][y]} ");
+                Console.Write($"{snakeMatrix[x][y]}");
             }
 
             Console.WriteLine();
@@ -96,37 +96,60 @@ public class TargetPractice
         int shotHeight = shotCoordinates[0];
         int shotWidth = shotCoordinates[1];
         int shotRadius = shotCoordinates[2];
-
         int shotRadiusDiagonal = shotRadius - 1;
-
-        for (int x = shotHeight; x <= shotHeight + shotRadius; x++)
-        {
-            snakeMatrix[x, shotWidth] = ' ';
-        }
-
-        for (int x = shotHeight; x >= shotHeight - shotRadius; x--)
-        {
-            snakeMatrix[x, shotWidth] = ' ';
-        }
-
-        for (int y = shotWidth; y <= shotWidth + shotRadius; y++)
-        {
-            snakeMatrix[shotHeight, y] = ' ';
-        }
-
-        for (int y = shotWidth; y >= shotWidth - shotRadius; y--)
-        {
-            snakeMatrix[shotHeight, y] = ' ';
-        }
 
         for (int x = shotHeight - shotRadiusDiagonal; x <= shotHeight + shotRadiusDiagonal; x++)
         {
             for (int y = shotWidth - shotRadiusDiagonal; y <= shotWidth + shotRadiusDiagonal; y++)
             {
-                snakeMatrix[x, y] = ' ';
+                try
+                {
+                    snakeMatrix[x, y] = ' ';
+                }
+                catch (Exception)
+                {
+
+                }
             }
         }
-        
+
+        try
+        {
+            snakeMatrix[shotHeight + shotRadius, shotWidth] = ' ';
+        }
+        catch (Exception)
+        {
+
+        }
+
+        try
+        {
+            snakeMatrix[shotHeight - shotRadius, shotWidth] = ' ';
+        }
+        catch (Exception)
+        {
+
+        }
+
+        try
+        {
+            snakeMatrix[shotHeight, shotWidth + shotRadius] = ' ';
+        }
+        catch (Exception)
+        {
+
+        }
+
+        try
+        {
+            snakeMatrix[shotHeight, shotWidth - shotRadius] = ' ';
+        }
+        catch (Exception)
+        {
+
+        }
+
+
         return snakeMatrix;
     }
 
@@ -175,4 +198,3 @@ public class TargetPractice
         return matrix;
     }
 }
-
