@@ -27,7 +27,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. Palindromes", "11. Pali
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. Character Multiplier", "12. Character Multiplier\12. Character Multiplier.csproj", "{1A548AAD-B8EE-4E1B-8333-36DBBDFC041C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 13. Magic exchangeable words", "Problem 13. Magic exchangeable words\Problem 13. Magic exchangeable words.csproj", "{C0C8C31B-ED95-48F7-8B95-5B8C86082DF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 13. Magic exchangeable words", "13. Magic exchangeable words\Problem 13. Magic exchangeable words.csproj", "{C0C8C31B-ED95-48F7-8B95-5B8C86082DF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14. Letters Change Numbers", "14. Letters Change Numbers\14. Letters Change Numbers.csproj", "{F146D431-F188-4CC3-BC1B-B72754B4C2AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15. Melrah Shake", "15. Melrah Shake\15. Melrah Shake.csproj", "{D42FFED9-6E59-4803-A140-10442B50BDAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16. Extract Hyperlinks", "16. Extract Hyperlinks\16. Extract Hyperlinks.csproj", "{EA8C897B-948A-457E-883C-8F9DC82D1DD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoingToAParty", "GoingToAParty\GoingToAParty.csproj", "{FF2FCF60-0044-4C1D-88EF-D8B3A9A1D62C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +95,22 @@ Global
 		{C0C8C31B-ED95-48F7-8B95-5B8C86082DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0C8C31B-ED95-48F7-8B95-5B8C86082DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0C8C31B-ED95-48F7-8B95-5B8C86082DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F146D431-F188-4CC3-BC1B-B72754B4C2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F146D431-F188-4CC3-BC1B-B72754B4C2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F146D431-F188-4CC3-BC1B-B72754B4C2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F146D431-F188-4CC3-BC1B-B72754B4C2AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D42FFED9-6E59-4803-A140-10442B50BDAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D42FFED9-6E59-4803-A140-10442B50BDAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D42FFED9-6E59-4803-A140-10442B50BDAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D42FFED9-6E59-4803-A140-10442B50BDAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA8C897B-948A-457E-883C-8F9DC82D1DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA8C897B-948A-457E-883C-8F9DC82D1DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA8C897B-948A-457E-883C-8F9DC82D1DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA8C897B-948A-457E-883C-8F9DC82D1DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF2FCF60-0044-4C1D-88EF-D8B3A9A1D62C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF2FCF60-0044-4C1D-88EF-D8B3A9A1D62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF2FCF60-0044-4C1D-88EF-D8B3A9A1D62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF2FCF60-0044-4C1D-88EF-D8B3A9A1D62C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
