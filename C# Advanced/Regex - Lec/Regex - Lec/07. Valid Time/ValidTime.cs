@@ -5,7 +5,7 @@ public static class ValidTime
 {
     public static void Main(string[] args)
     {
-        var matcher = new Regex(@"^([1-9]|1[0-2]|0[1-9]){1}(:[0-5][0-9]:[0-5][0-9] [AP][M]){1}$");
+        var matcher = new Regex(@"^(([0][0-9]:[0-5][0-9]:[0-5][0-9])|([1][1]:[0-5][0-9]:[0-5][0-9])|([0][0]:[0-5][0-9]:[0-5][0-9])) (AM|PM)$");
 
         while (true)
         {
