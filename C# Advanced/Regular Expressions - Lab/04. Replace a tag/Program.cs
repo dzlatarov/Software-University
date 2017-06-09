@@ -9,7 +9,9 @@ public static class ReplaceTag
 {
     public static void Main(string[] args)
     {
-        var strBuilderText = new StringBuilder();
+        var sb = new StringBuilder();
+
+        string pattern = @"<a (href=.+?)>(.+)</a>";
 
         while (true)
         {
@@ -20,12 +22,11 @@ public static class ReplaceTag
                 break;
             }
 
-            strBuilderText.Append(input);
+            sb.AppendLine(input);
         }
 
-        var text = strBuilderText.ToString();
+        var result = Regex.Replace(sb.ToString(), pattern, @"[URL $1]$2[/URL]");
 
-
+        Console.WriteLine(result);
     }
 }
-
