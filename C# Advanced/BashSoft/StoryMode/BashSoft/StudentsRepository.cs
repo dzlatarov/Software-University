@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 public static class StudentsRepository
@@ -25,11 +27,16 @@ public static class StudentsRepository
 
     private static void ReadData()
     {
-        string input = Console.ReadLine();
+        string pattern = @"([A-Z][a-zA-Z#+]*_[A-Z][a-z]{2}_\d{4})\s+([A-Z][a-z]{0,3}\d{2}\d{2,4})\s+(\d+)";
+        Regex rgx = new Regex(pattern);
 
-        while(!string.IsNullOrEmpty(input))
+        string line = Console.ReadLine();
+        string[] allInputLines = File.ReadAllLines(line);
+        
+
+        while(!string.IsNullOrEmpty(line) && rgx.IsMatch(allInputLines[]))
         {
-            string[] tokens = input.Split( ' ' );
+            string[] tokens = line.Split( ' ' );
             string course = tokens[0];
             string student = tokens[1];
             int mark = int.Parse(tokens[2]);
@@ -46,7 +53,7 @@ public static class StudentsRepository
 
             studentsByCourse[course][student].Add(mark);
 
-            input = Console.ReadLine();
+            line = Console.ReadLine();
         }
         
         isDataInitialized = true;

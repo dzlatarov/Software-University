@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
-public class StoryMode
+namespace CommandInterpreter
 {
-    public static void Main()
+    class Program
     {
-        InputReader.StartReadingCommands();
-
-
-
-
-
+        static void Main(string[] args)
+        {
+        }
     }
 }
-

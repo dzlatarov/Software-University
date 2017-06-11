@@ -17,5 +17,7 @@ public static class ExceptionMessages
     public const string ComparisonofFilesWithDifferentSizes = "Files not of equal size, certain mismatch.";
     public const string ForbiddenSymbolIsContained = "A frobidden symbol is contained.";
     public const string UnableToGoHigherInPartitionHierarchy = "Unable to go higher in partition hierarchy";
+    public const string UnabelToParseNumber = "Unable to parse number";
+    public const string InvalidInput = "Invalid Input";
 }
 
