@@ -34,7 +34,7 @@ public static class StudentsRepository
         string[] allInputLines = File.ReadAllLines(line);
         
 
-        while(!string.IsNullOrEmpty(line) && rgx.IsMatch(allInputLines[]))
+        while(!string.IsNullOrEmpty(line))
         {
             string[] tokens = line.Split( ' ' );
             string course = tokens[0];
@@ -115,4 +115,3 @@ public static class StudentsRepository
         }
     }
 }
-

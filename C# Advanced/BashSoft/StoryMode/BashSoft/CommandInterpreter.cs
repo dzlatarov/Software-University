@@ -13,45 +13,49 @@ public static class CommandInterpreter
         string[] data = input.Split(' ').ToArray();
         string command = data[0];
 
-        try
+        switch (command)
         {
-            switch (command)
-            {
-                case "open":
-                    TryOpenFile(input, data);
-                    break;
+            case "open":
+                TryOpenFile(input, data);
+                break;
 
-                case "mkdir":
-                    TryCreateDirectory(input, data);
-                    break;
+            case "mkdir":
+                TryCreateDirectory(input, data);
+                break;
 
-                case "ls":
-                    TryTraverseFolders(input, data);
-                    break;
+            case "ls":
+                TryTraverseFolders(input, data);
+                break;
 
-                case "cmp":
-                    TryCompareFiles(input, data);
-                    break;
+            case "cmp":
+                TryCompareFiles(input, data);
+                break;
 
-                case "cdRel":
-                    TryChangePathRelatively(input, data);
-                    break;
+            case "cdRel":
+                TryChangePathRelatively(input, data);
+                break;
 
-                case "cdAbs":
-                    TryChangePathAbsolute(input, data);
-                    break;
+            case "cdAbs":
+                TryChangePathAbsolute(input, data);
+                break;
 
-                case "readDb":
-                    TryReadDatabaseFromFile(input, data);
-                    break;
-            }
+            case "intData":
+                InitializeData();
+                break;
+
+            case "getDataFromCourse":
+                TryReadDatabase(data);
+                break;
+
+            case "getStudentDataFromCourse":
+                TryReadDatabaseCourse(data);
+                break;
+
+
         }
-        catch (Exception)
-        {
-            OutputWriter.DisplayException(ExceptionMessages.InvalidInput);
-        }
+
     }
-    
+
     public static void TryOpenFile(string input, string[] data)
     {
         string fileName = data[1];
@@ -111,35 +115,21 @@ public static class CommandInterpreter
 
 
 
-    public static void InitializeData(string fileName)
+    public static void InitializeData()
     {
-        //too lazy to fill
+        StudentsRepository.InitializeData();
     }
 
-    private static void TryReadDatabaseFromFile(string fileName)
+    private static void TryReadDatabase(string[] data)
     {
-        string path = SessionData.currentPath + "\\" + fileName;
-
-        if (File.Exists(path))
-        {
-            string[] allInputLines = File.ReadAllLines(path);
-
-            for (int line = 0; line < allInputLines.Length; line++)
-            {
-                if (!string.IsNullOrEmpty(allInputLines[line])) 
-                {
-                    string[] data = allInputLines[line].Split(' ');
-
-                        
-                }
-            }
-        }
-
-        // too lazy to fill
-        else
-        {
-            OutputWriter.WriteMessage(ExceptionMessages.InvalidPath);
-        }
+        StudentsRepository.GetAllStudentsFromCourse(data[1]);
     }
+
+    public static void TryReadDatabaseCourse(string[] data)
+    {
+        StudentsRepository.GetStudentScoreFromCourse(data[1], data[2]);
+    }
+
+    // I am getting a weird unathorized exceptions when it comes to reading and writing data which I don't know how to fix
 }
 
