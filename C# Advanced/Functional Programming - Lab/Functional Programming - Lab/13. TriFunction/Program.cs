@@ -12,7 +12,7 @@ public static class TriFunction
 
         foreach (var str in strings)
         {
-            var sum = str.ToCharArray().Select(z => z + 0).ToArray().Sum();
+            var sum = str.ToCharArray().Select(z => z + 0).Sum();
 
             if (sum >= charSum)
             {
