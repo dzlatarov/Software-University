@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public static class Program
+class Startup
 {
-    public static void Main(string[] args)
+    private static void Main(string[] args)
     {
-        BankAccount acc = new BankAccount();
+        List<BankAccount> accounts = new List<BankAccount>();
 
-        acc.ID = 1;
-        acc.Balance = 15;
+        var inpSc = new InputScanner();
 
-        Console.WriteLine($"Account {acc.ID}, balance {acc.Balance}");
+        inpSc.Run(accounts);
     }
 }

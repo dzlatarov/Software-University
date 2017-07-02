@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Define Bank Account Class", "01. Define Bank Account Class\01. Define Bank Account Class.csproj", "{D1A43185-00AC-423D-AFDA-E06BA623FA6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccounts", "01. Define Bank Account Class\BankAccounts.csproj", "{D1A43185-00AC-423D-AFDA-E06BA623FA6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
