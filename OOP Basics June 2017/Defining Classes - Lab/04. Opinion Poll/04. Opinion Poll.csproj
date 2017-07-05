@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{07304273-F604-4F6A-8750-ACC5C1533239}</ProjectGuid>
+    <ProjectGuid>{C52744C7-688D-4B00-8F20-21D174B90E2E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_02.Creating_Constructors</RootNamespace>
-    <AssemblyName>_02.Creating_Constructors</AssemblyName>
+    <RootNamespace>_4.Opinion_Poll</RootNamespace>
+    <AssemblyName>_4.Opinion_Poll</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Family.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

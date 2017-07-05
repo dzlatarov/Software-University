@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{07304273-F604-4F6A-8750-ACC5C1533239}</ProjectGuid>
+    <ProjectGuid>{A43EED3B-2A61-4515-8B81-D1764106922B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_02.Creating_Constructors</RootNamespace>
-    <AssemblyName>_02.Creating_Constructors</AssemblyName>
+    <RootNamespace>_03.Oldest_Family_Member</RootNamespace>
+    <AssemblyName>_03.Oldest_Family_Member</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Family.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
