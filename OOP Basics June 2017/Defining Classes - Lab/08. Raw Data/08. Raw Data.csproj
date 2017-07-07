@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{230A6BCC-EC56-4ED8-A6E5-7C6EE2687200}</ProjectGuid>
+    <ProjectGuid>{6E85ABE4-0844-411B-952C-6A1F3CA16669}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_08.Raw_Data</RootNamespace>
     <AssemblyName>_08.Raw_Data</AssemblyName>
@@ -42,6 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car Objects\Cargo.cs" />
+    <Compile Include="Car Objects\Engine.cs" />
+    <Compile Include="Car Objects\Model.cs" />
+    <Compile Include="Car Objects\Tires.cs" />
+    <Compile Include="Car.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
