@@ -43,8 +43,7 @@ public class StartUp
             cars.Add(car);
         }
 
-        var cargoTypeToSearch = Console.ReadLine();  
-        
+        var cargoTypeToSearch = Console.ReadLine();       
         PrintResult(cars, cargoTypeToSearch);
     }
 
