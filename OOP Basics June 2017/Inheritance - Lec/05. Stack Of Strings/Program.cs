@@ -8,7 +8,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        RandomList rl = new RandomList();        
+        StackOfStrings stack = new StackOfStrings();
     }
 }
 

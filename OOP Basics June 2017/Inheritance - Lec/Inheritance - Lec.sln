@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Single Inheritance", "01. Single Inheritance\01. Single Inheritance.csproj", "{6ED1FF72-F86D-4CBC-B8C2-C844A3C092AE}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Hierarchical Inheritance", "03. Hierarchical Inheritance\03. Hierarchical Inheritance.csproj", "{3FF866C9-99C5-4354-BF72-3CA7C4542D87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Random List", "04. Random List\04. Random List.csproj", "{70A829EF-461B-48E3-A8F8-2EF923789A85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Stack Of Strings", "05. Stack Of Strings\05. Stack Of Strings.csproj", "{9E2D1638-1A30-4337-8303-72D3DE6B8104}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{70A829EF-461B-48E3-A8F8-2EF923789A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70A829EF-461B-48E3-A8F8-2EF923789A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70A829EF-461B-48E3-A8F8-2EF923789A85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E2D1638-1A30-4337-8303-72D3DE6B8104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E2D1638-1A30-4337-8303-72D3DE6B8104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E2D1638-1A30-4337-8303-72D3DE6B8104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E2D1638-1A30-4337-8303-72D3DE6B8104}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
