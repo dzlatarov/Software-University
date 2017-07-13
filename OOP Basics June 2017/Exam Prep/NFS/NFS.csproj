@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A0DDA05F-6C8C-48AC-8906-A64D36D8AD45}</ProjectGuid>
+    <ProjectGuid>{E3FF96C2-3089-4B81-BF3A-5C4E9539D863}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Need_For_Speed</RootNamespace>
-    <AssemblyName>Need For Speed</AssemblyName>
+    <RootNamespace>NFS</RootNamespace>
+    <AssemblyName>NFS</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,11 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cars\Car.cs" />
-    <Compile Include="Cars\PerformanceCar.cs" />
-    <Compile Include="Cars\ShowCar.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Core\CarManager.cs" />
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Entities\Cars\Car.cs" />
+    <Compile Include="Entities\Cars\PerformanceCar.cs" />
+    <Compile Include="Entities\Cars\ShowCar.cs" />
+    <Compile Include="Entities\Garage.cs" />
+    <Compile Include="Entities\Races\CasualRace.cs" />
+    <Compile Include="Entities\Races\DragRace.cs" />
+    <Compile Include="Entities\Races\DriftRace.cs" />
+    <Compile Include="Entities\Races\Race.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

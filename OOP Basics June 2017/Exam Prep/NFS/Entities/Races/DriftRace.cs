@@ -4,13 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class ShowCar : Car
+public class DriftRace : Race
 {
-    private int stars;
-
-    public int Stars
-    {
-        get { return this.stars; }
-    }
+   
 }
-

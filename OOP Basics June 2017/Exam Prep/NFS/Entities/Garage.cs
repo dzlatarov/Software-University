@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Program
+public class Garage
 {
-    public static void Main(string[] args)
-    {
-    }
+
 }
 

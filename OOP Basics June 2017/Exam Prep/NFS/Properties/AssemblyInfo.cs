@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Need For Speed")]
+[assembly: AssemblyTitle("NFS")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Need For Speed")]
+[assembly: AssemblyProduct("NFS")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a0dda05f-6c8c-48ac-8906-a64d36d8ad45")]
+[assembly: Guid("e3ff96c2-3089-4b81-bf3a-5c4e9539d863")]
 
 // Version information for an assembly consists of the following four values:
 //
